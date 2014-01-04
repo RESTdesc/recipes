@@ -1,9 +1,14 @@
 <!doctype html>
-<html>
+<html
+  prefix="recipe: http://linkedrecipes.org/schema/
+          imperial: http://kilosandcups.info/imperial/
+          customary: http://kilosandcups.info/us_customary/"
+>
 <head>
   <meta charset="utf-8">
   <title>Recipe: Orange Cake</title>
   <link rel="stylesheet" href="styles/main.css">
+  <base href="http://example.org/recipes/orangecake">
 </head>
 <body>
   <header>
@@ -19,48 +24,96 @@
       </ul>
     </nav>
   </header>
-  <div id="main">
-    <h1>Orange Cake</h1>
+  <div id="main" about="/recipes/orangecake" typeof="recipe:Recipe schema:Recipe">
+    <div property="recipe:produces" typeof="recipe:Dish">
+      <h1 property="rdfs:label">Orange Cake</h1>
 
-    <figure>
-      <img src="http://images.media-allrecipes.com/userphotos/250x250/00/98/74/987429.jpg" alt="">
-    </figure>
+      <figure>
+        <img property="schema:image"
+             src="http://images.media-allrecipes.com/userphotos/250x250/00/98/74/987429.jpg" alt="">
+      </figure>
+    </div>
 
     <h2>Overview</h2>
     <dl>
       <dt>Preparation time</dt>
-      <dd>30 mins</dd>
+      <dd property="recipe:preparation_time" content="P30M" datatype="xsd:duration">30 mins</dd>
       <dt>Cooking time</dt>
-      <dd>1 hour</dd>
+      <dd property="recipe:cooking_time" content="P1H" datatype="xsd:duration">1 hour</dd>
       <dt>Ready after</dt>
       <dd>2 mins</dd>
     </dl>
 
     <h2>Ingredients</h2>
     <p>Original recipe makes a 10-inch Bundt cake.</p>
-    <ul class="ingredients">
-      <li>1 (18.25 ounce) package yellow cake mix</li>
-      <li>1 (3 ounce) package instant lemon pudding mix</li>
-      <li>3/4 cup orange juice</li>
-      <li>1/2 cup vegetable oil</li>
-      <li>4 eggs</li>
-      <li>1 teaspoon lemon extract</li>
-      <li>1/3 cup orange juice</li>
-      <li>2/3 cup white sugar</li>
-      <li>1/4 cup butter</li>
+    <ul class="ingredients" rel="recipe:ingredients"
+        resource="/recipes/orangecake/ingredients" typeof="recipe:IngredientList">
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content="18.25" datatype="imperial:ounce">18.25 ounce</span>
+        <span property="rdfs:label">yellow cake mix</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content="3" datatype="imperial:ounce">3 ounce</span>
+        <span property="rdfs:label">instant lemon pudding mix</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content=".75" datatype="customary:cup">3/4 cup</span>
+        <span property="rdfs:label">orange juice</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content=".5" datatype="customary:cup">1/2 cup</span>
+        <span property="rdfs:label">vegetable oil</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content="4" datatype="xsd:integer">4</span>
+        <span property="rdfs:label">eggs</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content="1" datatype="customary:teaspoon">1 teaspoon</span>
+        <span property="rdfs:label">lemon extract</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content=".33" datatype="customary:cup">1/3 cup</span>
+        <span property="rdfs:label">orange juice</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content=".66" datatype="customary:cup">2/3 cup</span>
+        <span property="rdfs:label">white sugar</span>
+      </li>
+      <li rel="recipe:ingredient" typeof="recipe:Ingredient">
+        <span property="recipe:quantity" content=".25" datatype="customary:cup">1/4 cup</span>
+        <span property="rdfs:label">butter</span>
+      </li>
     </ul>
 
     <h2>Directions</h2>
-    <ol class="directions">
-      <li>Grease a 10 inch Bundt pan. Preheat oven to 325 degrees F.</li>
-      <li>In a large bowl, stir together cake mix and pudding mix.
-        Make a well in the center and pour in 3/4 cup orange juice, oil, eggs and lemon extract.
-        Beat on low speed until blended. Scrape bowl, and beat 4 minutes on medium speed.
-        Pour batter into prepared pan.</li>
-      <li>Bake in preheated oven for 50 to 60 minutes.
-        Let cool in pan for 10 minutes, then turn out onto a wire rack and cool completely.</li>
-      <li>In a saucepan over medium heat, cook 1/3 cup orange juice, sugar and butter for two minutes.
-        Drizzle over cake.</li>
+    <ol class="directions" property="recipe:method"
+        resource="/recipes/orangecake/method" typeof="recipe:Method">
+      <li property="rdfs:member" typeof="recipe:Step">
+        <span property="rdfs:comment">
+          Grease a 10 inch Bundt pan. Preheat oven to 325 degrees F.
+        </span>
+      </li>
+      <li property="rdfs:member" typeof="recipe:Step">
+        <span property="rdfs:comment">
+          In a large bowl, stir together cake mix and pudding mix.
+          Make a well in the center and pour in 3/4 cup orange juice, oil, eggs and lemon extract.
+          Beat on low speed until blended. Scrape bowl, and beat 4 minutes on medium speed.
+          Pour batter into prepared pan.
+        </span>
+      </li>
+      <li property="rdfs:member" typeof="recipe:Step">
+        <span property="rdfs:comment">
+          Bake in preheated oven for 50 to 60 minutes.
+          Let cool in pan for 10 minutes, then turn out onto a wire rack and cool completely.
+        </span>
+      </li>
+      <li property="rdfs:member" typeof="recipe:Step">
+        <span property="rdfs:comment">
+          In a saucepan over medium heat, cook 1/3 cup orange juice, sugar and butter for two minutes.
+          Drizzle over cake.
+        </span>
+      </li>
     </ol>
   </div>
   <footer>
