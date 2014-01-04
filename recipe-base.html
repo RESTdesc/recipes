@@ -2,7 +2,8 @@
 <html
   prefix="recipe: http://linkedrecipes.org/schema/
           imperial: http://kilosandcups.info/imperial/
-          customary: http://kilosandcups.info/us_customary/"
+          customary: http://kilosandcups.info/us_customary/
+          ex: http://example.org/recipes#"
 >
 <head>
   <meta charset="utf-8">
@@ -50,11 +51,12 @@
         <ul>
           <li>
             <label for="persons">Persons</label>
-            <input id="persons" type="number" min="1" value="4">
+            <input id="persons" type="number" min="1" value="4"
+                   property="recipe:serves" content="4" datatype="xsd:integer">
           </li>
           <li>
             <label for="units">Units</label>
-            <select id="units">
+            <select id="units" property="ex:units" content="US">
               <option value="US" selected>US</option>
               <option value="metric">metric</option>
             </select>
