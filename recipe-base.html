@@ -44,6 +44,25 @@
       <dd>2 mins</dd>
     </dl>
 
+    <h2>Settings</h2>
+    <form>
+      <fieldset>
+        <ul>
+          <li>
+            <label for="persons">Persons</label>
+            <input id="persons" type="number" min="1" value="4">
+          </li>
+          <li>
+            <label for="units">Units</label>
+            <select id="units">
+              <option value="US" selected>US</option>
+              <option value="metric">metric</option>
+            </select>
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+
     <h2>Ingredients</h2>
     <p>Original recipe makes a 10-inch Bundt cake.</p>
     <ul class="ingredients" rel="recipe:ingredients"
